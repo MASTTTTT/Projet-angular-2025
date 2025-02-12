@@ -1,9 +1,9 @@
 <div class="mt-4" *ngIf=" (menus | async) as listeMenus">
-  <h2> Vous avez <b>{{ listeMenus.length}}</b> menus</h2>
+  <h2 class="mb-4"> Vous avez <b>{{listeMenus.length}}</b> menus</h2>
   <ul class="list-group mt-2">
     <app-menu-item
       *ngFor = "let menu of listeMenus"
       [menu] = "menu"></app-menu-item>
   </ul>
-  <a routerLink="/menus/new" class="btn btn-info rounded-pill">Nouveau Menu</a>
+  <a routerLink="/menus/new" class="btn btn-info mt-4 rounded-pill">Nouveau Menu</a>
 </div>

@@ -1,1 +1,12 @@
-<p>menu-detail works!</p>
+<div class="mt-4">
+  <h2 class="mb-4">Votre <b>{{menu.nom}}</b> :</h2>
+
+  <p>
+    {{menu.description}} <br>
+    Crée le {{menu.date_creation}}
+  </p>
+
+  <a routerLink="/menus/new" class="btn btn-info mt-4 rounded-pill">Ajouter un plat</a>
+
+  <app-plat-list></app-plat-list>
+</div>

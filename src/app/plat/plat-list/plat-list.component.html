@@ -1,1 +1,8 @@
-<p>plat-list works!</p>
+<div class="mt-4" *ngIf=" (plats | async) as listePlats">
+  <h2 class="mb-4"> Ce menu possède <b>{{listePlats.length}}</b> plats</h2>
+  <ul class="list-group mt-2">
+    <app-plat-item
+      *ngFor = "let plat of listePlats"
+      [plat] = "plat"></app-plat-item>
+  </ul>
+</div>

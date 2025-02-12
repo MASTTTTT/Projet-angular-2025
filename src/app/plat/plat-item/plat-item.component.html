@@ -1,1 +1,8 @@
-<p>plat-item works!</p>
+<li class="w-50">
+  <div class="d-flex justify-content-between">
+    <p><b>{{plat.nom}}</b> - {{plat.calorie}}</p>
+    <div class="d-flex justify-content-end">
+      <a class="btn" routerLink="/menus/{menu.id}/edit/{{plat.id}}"> <i class="fa-solid fa-pen text-dark"></i> </a>
+    </div>
+  </div>
+</li>

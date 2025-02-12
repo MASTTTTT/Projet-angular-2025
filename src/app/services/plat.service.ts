@@ -3,21 +3,20 @@ import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Plat } from '../models/plat';
 import { Observable } from 'rxjs';
-import { Menu } from '../models/menu';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PlatService {
-  readonly platApi = environment.apiUrl + '/menus';
+  readonly platApi = environment.apiUrl + '/plats';
 
   constructor(private http: HttpClient) {}
 
-  getPlats(): Observable<Plat[]> {
-    return this.http.get<Plat[]>(this.platApi + '/');
+  getPlats(menuId: number): Observable<Plat[]> {
+    return this.http.get<Plat[]>(this.platApi + '?menuId=' + menuId);
   }
   getPlat(id: number): Observable<Plat> {
-    return this.http.get<Plat>(this.platApi + '/' + id);
+    return this.http.get<Plat>(this.platApi + id);
   }
   addPlat(newPlat: Plat): Observable<Plat> {
     return this.http.post<Plat>(this.platApi, newPlat);
