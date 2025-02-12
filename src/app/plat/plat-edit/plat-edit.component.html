@@ -1,1 +1,19 @@
-<p>plat-edit works!</p>
+<div class="mt-4">
+  <h2>{{this.plat.id == 0 ? "Nouveau plat" : "Modifier ce Plat "}}</h2>
+
+
+  <form class="mt-4" #formulaire="ngForm" (ngSubmit)="onSubmit(formulaire)">
+    <div class="form-group w-75">
+      <label class="ms-3" for="nom"><b>Nom</b></label>
+      <input [(ngModel)]="plat.nom" type="text" name="nom" id="nom" class="form-control rounded-pill" required minlength="5" maxlength="20">
+    </div>
+    <div class="form-group mt-2 w-25">
+      <label class="ms-3" for="calories"><b>Calories</b></label>
+      <input [(ngModel)]="plat.calories" type="number" name="calories" id="calories" class="form-control rounded-pill" required minlength="1" maxlength="5">
+    </div>
+    <div class="d-flex btn-group mt-4 gap-4 w-50 justify-content-evenly">
+      <button class="btn btn-success" type="submit" [disabled]="formulaire.invalid">{{this.plat.id == 0 ? "Créer le Plat" : "Modifier ce Plat"}}</button>
+      <a routerLink="/menus" class="btn btn-warning">Annuler</a>
+    </div>
+  </form>
+</div>

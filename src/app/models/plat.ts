@@ -3,6 +3,6 @@ export class Plat {
     public id: number = 0,
     public menuId: number = 0,
     public nom: string = '',
-    public calorie: number = 0
+    public calories: number = 0
   ) {}
 }

@@ -6,7 +6,7 @@
     Crée le {{menu.date_creation}}
   </p>
 
-  <a routerLink="/menus/new" class="btn btn-info mt-4 rounded-pill">Ajouter un plat</a>
-
   <app-plat-list></app-plat-list>
+
+  <a routerLink="/menus/{{menu.id}}/plats/new" class="btn btn-info mt-4 rounded-pill">Ajouter un plat</a>
 </div>

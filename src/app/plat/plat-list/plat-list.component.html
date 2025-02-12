@@ -1,5 +1,5 @@
 <div class="mt-4" *ngIf=" (plats | async) as listePlats">
-  <h2 class="mb-4"> Ce menu possède <b>{{listePlats.length}}</b> plats</h2>
+  <h3 class="mb-4"> Ce menu possède <b>{{listePlats.length}}</b> plats</h3>
   <ul class="list-group mt-2">
     <app-plat-item
       *ngFor = "let plat of listePlats"

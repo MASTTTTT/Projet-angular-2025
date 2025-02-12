@@ -1,6 +1,6 @@
 <li class="list-group-item w-50">
   <div class="d-flex justify-content-between">
-    <p><b>{{menu.nom}}</b> - {{menu.statut}}</p>
+    <p><b>{{menu.nom}}</b> - <b [ngClass]="{'text-success':menu.statut==statutMenu.ACTIF, 'text-warning': menu.statut==statutMenu.INACTIF}">{{menu.statut}}</b></p>
     <div class="d-flex justify-content-end">
       <a class="btn" routerLink="/menus/{{menu.id}}/plats"> <i class="fa-solid fa-magnifying-glass text-dark"></i> </a>
       <a class="btn" routerLink="/menus/edit/{{menu.id}}"> <i class="fa-solid fa-pen text-dark"></i> </a>

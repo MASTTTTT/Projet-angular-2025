@@ -16,15 +16,15 @@ export class PlatService {
     return this.http.get<Plat[]>(this.platApi + '?menuId=' + menuId);
   }
   getPlat(id: number): Observable<Plat> {
-    return this.http.get<Plat>(this.platApi + id);
+    return this.http.get<Plat>(this.platApi + '/' + id);
   }
   addPlat(newPlat: Plat): Observable<Plat> {
     return this.http.post<Plat>(this.platApi, newPlat);
   }
-  // updatePlat(plat: Plat): Observable<Plat> {
-  //   return this.http.put<Plat>(this.platApi + '/' + plat);
-  // }
-  // deletePlat(menu: Plat): Observable<Menu> {
-  //   return this.http.delete<Plat>(this.platApi + '/' + menu.id);
-  // }
+  updatePlat(plat: Plat): Observable<Plat> {
+    return this.http.put<Plat>(this.platApi + '/' + plat.id, plat);
+  }
+  deletePlat(plat: Plat): Observable<Plat> {
+    return this.http.delete<Plat>(this.platApi + '/' + plat.id);
+  }
 }
