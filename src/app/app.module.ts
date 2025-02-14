@@ -12,8 +12,8 @@ import { PlatListComponent } from './plat/plat-list/plat-list.component';
 import { PlatItemComponent } from './plat/plat-item/plat-item.component';
 import { PlatEditComponent } from './plat/plat-edit/plat-edit.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MenuComponent } from './menu/menu.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { FormsModule } from '@angular/forms';
     PlatListComponent,
     PlatItemComponent,
     PlatEditComponent,
-    MenuComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -38,6 +38,7 @@ export class PlatEditComponent {
       if (this.plat.id) {
         ObservableAction = this.platService.updatePlat(this.plat);
       } else {
+        this.plat.menuId = this.route.snapshot.params['id'];
         ObservableAction = this.platService.addPlat(this.plat);
       }
       ObservableAction.subscribe({

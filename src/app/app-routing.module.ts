@@ -12,9 +12,7 @@ const routes: Routes = [
   { path: 'menus/:id/plats', component: MenuDetailComponent },
   { path: 'menus/:id/plats/new', component: PlatEditComponent },
   { path: 'menus/:id/plats/edit/:idPlat', component: PlatEditComponent },
-  { path: 'menus/:id/plats/delete/:idPlat', component: PlatEditComponent },
   { path: 'menus/edit/:id', component: MenuEditComponent },
-  { path: 'menus/delete/:id', component: MenuEditComponent },
   { path: '', component: AccueilComponent}
 ];
 

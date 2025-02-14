@@ -26,7 +26,8 @@ export class MenuService {
     return this.http.put<Menu>(this.menuApi + '/' + menu.id, menu);
   }
   deleteMenu(menu: Menu): Observable<Menu> {
-    //PlatService.getPlats()
+    const platsApi = this.menuApi + '/' + menu.id + '/plats'
+    this.http.delete(platsApi)
     return this.http.delete<Menu>(this.menuApi + '/' + menu.id);
   }
 }

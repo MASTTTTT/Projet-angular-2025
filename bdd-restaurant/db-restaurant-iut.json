@@ -69,7 +69,7 @@
       "id": 1,
       "menuId": 1,
       "nom": "Foie gras pas cuit",
-      "calories": 400
+      "calories": 450
     },
     {
       "id": 2,
@@ -190,6 +190,24 @@
       "menuId": 0,
       "nom": "Coucous pakistanais",
       "calories": 565
+    },
+    {
+      "id": 22,
+      "menuId": 0,
+      "nom": "Caca trompe l'oeil",
+      "calories": 650
+    },
+    {
+      "id": 23,
+      "menuId": 0,
+      "nom": "Caca trompe l'oeil",
+      "calories": 700
+    },
+    {
+      "id": 24,
+      "menuId": "1",
+      "nom": "Caca trompe l'oeil",
+      "calories": 700
     }
   ],
   "types_plats": [

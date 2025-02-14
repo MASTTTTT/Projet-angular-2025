@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Plat } from '../../models/plat';
-import { ActivatedRoute } from '@angular/router';
-import { MenuService } from '../../services/menu.service';
+import { PlatService } from '../../services/plat.service';
 
 @Component({
   selector: 'app-plat-item',
@@ -12,5 +11,9 @@ export class PlatItemComponent {
   @Input()
   public plat: Plat = new Plat();
 
-  constructor(){}
+  constructor(private platService: PlatService) {}
+
+  public onDelete(): void {
+    this.platService.deletePlat(this.plat)
+  }
 }
