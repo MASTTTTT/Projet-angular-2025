@@ -55,13 +55,6 @@
       "description": "Un menu équilibré et léger pour une alimentation saine.",
       "date_creation": "2025-02-12",
       "statut": "actif"
-    },
-    {
-      "id": 9,
-      "nom": "Menu Délicieux",
-      "description": "Un menu digne des plus grands.",
-      "date_creation": "2025-1-3",
-      "statut": "actif"
     }
   ],
   "plats": [
@@ -181,33 +174,9 @@
     },
     {
       "id": 20,
-      "menuId": 0,
-      "nom": "Caca trompe l'oeil",
-      "calories": 700
-    },
-    {
-      "id": 21,
-      "menuId": 0,
-      "nom": "Coucous pakistanais",
-      "calories": 565
-    },
-    {
-      "id": 22,
-      "menuId": 0,
-      "nom": "Caca trompe l'oeil",
-      "calories": 650
-    },
-    {
-      "id": 23,
-      "menuId": 0,
-      "nom": "Caca trompe l'oeil",
-      "calories": 700
-    },
-    {
-      "id": 24,
       "menuId": "1",
-      "nom": "Caca trompe l'oeil",
-      "calories": 700
+      "nom": "Pizza margherita",
+      "calories": 600
     }
   ],
   "types_plats": [

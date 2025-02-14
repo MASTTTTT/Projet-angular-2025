@@ -4,14 +4,15 @@ import { HttpClient } from '@angular/common/http';
 import { Menu } from '../models/menu';
 import { Observable } from 'rxjs';
 import { PlatService } from './plat.service';
+import { Plat } from '../models/plat';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MenuService {
-  readonly menuApi = environment.apiUrl + '/menus';
+  readonly menuApi = environment.apiUrl + '/menus'
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private platService: PlatService) {}
 
   getMenus(): Observable<Menu[]> {
     return this.http.get<Menu[]>(this.menuApi);
@@ -26,8 +27,11 @@ export class MenuService {
     return this.http.put<Menu>(this.menuApi + '/' + menu.id, menu);
   }
   deleteMenu(menu: Menu): Observable<Menu> {
-    const platsApi = this.menuApi + '/' + menu.id + '/plats'
-    this.http.delete(platsApi)
+    this.platService.getPlats(menu.id).subscribe((plats) =>  {
+        plats.forEach((plat) => {
+          this.platService.deletePlat(plat.id);
+        });
+      });
     return this.http.delete<Menu>(this.menuApi + '/' + menu.id);
   }
 }

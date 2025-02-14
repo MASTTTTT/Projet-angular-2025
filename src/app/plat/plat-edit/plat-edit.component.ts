@@ -3,6 +3,7 @@ import { Plat } from '../../models/plat';
 import { PlatService } from '../../services/plat.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-plat-edit',
@@ -11,6 +12,7 @@ import { NgForm } from '@angular/forms';
 })
 export class PlatEditComponent {
   public plat: Plat = new Plat();
+  public typesPlats!: Observable<Plat[]>;
 
   constructor(
     private platService: PlatService,
@@ -30,6 +32,7 @@ export class PlatEditComponent {
         });
       }
     }
+    this.typesPlats = this.platService.getTypesPlats()
   }
 
   public onSubmit(leForm: NgForm): void {
@@ -47,7 +50,7 @@ export class PlatEditComponent {
         },
         error: (err) => {
           console.log('ERREUR de sauvegarde : ', err);
-        }
+        },
       });
     }
   }

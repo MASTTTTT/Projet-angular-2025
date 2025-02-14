@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class PlatService {
   readonly platApi = environment.apiUrl + '/plats';
+  readonly typesPlatsApi = environment.apiUrl + '/types_plats';
 
   constructor(private http: HttpClient) {}
 
@@ -24,7 +25,11 @@ export class PlatService {
   updatePlat(plat: Plat): Observable<Plat> {
     return this.http.put<Plat>(this.platApi + '/' + plat.id, plat);
   }
-  deletePlat(plat: Plat): Observable<Plat> {
-    return this.http.delete<Plat>(this.platApi + '/' + plat.id);
+  deletePlat(id: number): Observable<Plat> {
+    return this.http.delete<Plat>(this.platApi + '/' + id);
+  }
+
+  getTypesPlats(): Observable<Plat[]> {
+    return this.http.get<Plat[]>(this.typesPlatsApi);
   }
 }
