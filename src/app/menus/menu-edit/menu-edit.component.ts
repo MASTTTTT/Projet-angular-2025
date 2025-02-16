@@ -36,8 +36,10 @@ export class MenuEditComponent {
       if (this.menu.id) {
         ObservableAction = this.menuService.updateMenu(this.menu);
       } else {
-        const date_crea = new Date()
-        this.menu.date_creation = date_crea.getFullYear() + "-" + date_crea.getMonth() + "-" + date_crea.getDay()
+        const date_crea = new Date();
+        this.menu.date_creation = date_crea.getFullYear() +
+          '-' + (date_crea.getMonth() + 1).toString().padStart(2, '0') +
+          '-' + date_crea.getDate().toString().padStart(2, '0');
         ObservableAction = this.menuService.addMenu(this.menu);
       }
       ObservableAction.subscribe({
